@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Angular Analyzer</title>
+	</head>
+	<script id="deplist-template" type="x-tmpl-mustache">
+		<b>Libraries:</b>
+		<ul>
+		{{#dependencies}}
+			<li> {{name}} - {{functions}} </li>
+		{{/dependencies}}
+		</ul>
+		<br/>
+		<br/>
+		<b>App Sections:</b>
+		<ul>
+			{{#contexts}}
+					<li>{{name}} - {{hasDom}}</li>
+			{{/contexts}}
+		</ul>
+		<br/>
+		<div id="canvas"></div>
+	</script>
+	<style type="text/css">
+		html, body {width: 750px; height: 550px;}
+	</style>
+	<body>
+		<div id="content">
+			Analyzing...
+		</div>
+		<script src="lib/q-0.1.0.js"></script>
+		<script src="lib/qajax-0.2.3.min.js"></script>
+		<script src="lib/esprima.js"></script>
+		<script src="lib/estraverse.js"></script>
+		<script src="lib/escope.js"></script>
+		<script src="lib/mustache.js"></script>
+		<script src="js/util.js"></script>
+		<script src="js/types.js"></script>
+		<script src="js/dom.js"></script>
+		<script src="js/ast.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/routes.js"></script>
+		<script src="js/model.js"></script>
+		<script src="js/valuewrapper.js"></script>
+		<script src="js/trigger/sideeffect.js"></script>
+		<script src="js/trigger/trigger.js"></script>
+		<script src="js/analyzer.js"></script>
+	</body>
+</html>

@@ -1,0 +1,16 @@
+{  
+	"manifest_version": 2,
+	"name": "Angular Analyzer",
+	"description": "",
+	"version": "1.0",
+	"permissions": [ "tabs", "webRequest", "http://*/*", "https://*/*" ],
+	"content_scripts": [{
+		"matches": [ "http://*/*", "https://*/*" ],
+		"js": [ "js/content.js" ],
+		"run_at": "document_idle"
+	}],
+	"browser_action": {
+		"default_icon": "icon.png",
+		"default_popup": "popup.html"
+	}
+}

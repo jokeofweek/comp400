@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+    	.node circle {
+    		cursor: pointer;
+    		fill: #fff;
+    		stroke: steelblue;
+    		stroke-width: 1.5px;
+		}
+		.node text {
+			font-size: 11px;
+		}
+		path.link {
+			fill: none;
+			stroke: #ccc;
+			stroke-width: 1.5px;
+		}
+		.view {
+			width: 150px;
+		    position: absolute;
+		    border: 1px solid black;
+		    opacity: 0.5;
+		    left: 20px;
+		    padding: 5px;
+		}
+		.view:hover {
+			opacity: 1;
+		}
+		#selected-view {
+		    max-height: 300px;
+		    height: 300px;
+		    top: 70px;
+		    overflow-wrap: break-word;
+		}
+		#search-view {
+			max-height: 26px;
+			height: 26px;
+			top: 20px;
+		}
+		#search-view input {
+			height: 20px;
+			width: 90px;
+		}
+		#search-view a {
+			padding-left: 10px;
+		}
+		.node text.marked {
+			fill: green;
+		}
+		.node text.search-result {
+			fill: blue;
+		}
+    </style>
+
+	<script id="selected-template" type="x-tmpl-mustache">
+		<b>Node: </b> {{name}}
+		<hr/>
+		{{#properties}}
+				<b>{{key}}</b> : {{value}}<br/>
+		{{/properties}}
+	</script>
+</head>
+<body>
+	<script src="lib/d3.js"></script>
+	<script src="lib/d3.layout.js"></script>
+	<script src="lib/mustache.js"></script>
+	<script src="js/modeltransformer.js"></script>
+	<script src="js/modelsearcher.js"></script>
+	<script src="js/selectview.js"></script>
+	<script src="js/renderapp.js"></script>
+	<script src="js/util.js"></script>
+	<div id="search-view" class="view">
+		<input id="search-box" type="text"/><a href="#" id="search-link">Search</a>
+	</div>
+	<div id="selected-view" class="view"></div>
+</body>
+</html>
